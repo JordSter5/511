@@ -1,0 +1,23 @@
+overtimerate = 1.5
+
+try:
+    hours = float(input('Enter Hours: '))
+    rate = float(input('Enter Rate: '))
+except:
+    print 'Error, please enter number'
+    
+hours = float(input('Enter Hours'))
+rate = float(input('Pay Rate'))
+overtimerate = 1.5
+
+def pay(hours, rate):
+    overtimepay = 0
+    if hours > 40:
+        overtime = hours - 40
+        overtimepay = overtime * rate * overtimerate
+        Total = ((hours - overtime) * rate) + overtimepay
+    else:
+        Total = (hours * rate)
+    return('Pay: ' + str(Total))
+
+print(pay(hours, rate))
